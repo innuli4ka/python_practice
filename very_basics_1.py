@@ -68,15 +68,50 @@ def car_insurance():
         print("Risk level: Standard")
 
 
+def lab_sefety():
+    temp = float(input("Enter the temperature in Celsius: "))
+    pressure = float(input("Enter the pressure in bar: ")) 
+    voltage = float(input("Enter the voltage in volts: "))
+    if 20 < temp < 80 and pressure < 50 and 200 < voltage < 250:
+        print("Safe to proceed")
+    else:
+        print("Unsafe conditions")
+
+
+
+def final_exam():
+    spell = int(input("Enter the spell evaluation (0-100): "))
+    accracy = int(input("Enter the accuracy evaluation (0-100): "))
+    control = int(input("Enter the control evaluation (0-100): "))
+    
+    if spell < 40 or accracy < 40 or control < 40:
+        print("You have failed the exam.")
+        return
+    
+    av = (spell + accracy + control) / 3
+    if av <= 60: 
+        print("You have failed the exam.")
+    elif 60 < av < 75:
+        print("You are Apprentice")
+    elif 75 <= av < 89:
+        print("You are a Mage")
+    elif av > 90:
+        print("You are a Archmage")
+    
+
+
+
 while True:
     print("\n=== Main Menu ===")
     print("1. Check if you can pay rent and save")
     print("2. Calculate shopping total with shipping and discount")
     print("3. Castle entry check")
     print("4. Car insurance premium calculation")
-    print("5. Exit")
+    print("5. Lab safety check")
+    print("6. Final Wizard's exam evaluation")
+    print("7. Exit")
 
-    choice = input("Enter your choice (1-4): ")
+    choice = input("Enter your choice (1-7): ")
 
     if choice == "1":
        salary_check()
@@ -87,7 +122,11 @@ while True:
     elif choice == "4":
         car_insurance()
     elif choice == "5":
+        lab_sefety()
+    elif choice == "6":
+        final_exam()
+    elif choice == "7":
         print("Goodbye!")
         break
     else:
-        print("Invalid choice. Please enter a number between 1 and 4.")
+        print("Invalid choice. Please enter a number between 1 and 7.")
